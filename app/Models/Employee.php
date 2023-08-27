@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Training;
 use App\Models\Department;
+use App\Models\Designation;
 use App\Models\LeavesAdmin;
 use App\Models\StaffSalary;
 use App\Models\PerformanceAppraisal;
@@ -53,4 +54,11 @@ class Employee extends Model
     {
         return $this->hasMany(Training::class);
     }
+    public function designation()
+    {
+        return $this->belongsTo(Designation::class);
+    }
 }
+
+
+

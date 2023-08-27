@@ -4,25 +4,24 @@ php artisan make:migration create_users_table
 Employee
 Department
 Employee
-Form
 Holiday
+LeaveApplication
+LeavesBalance
 LeavesAdmin
 ModulePermission
-PerformanceAppraisal
-PerformanceIndicator
 PermissionList
-PositionList
+Designation
 ProfileInformation
 RolesPermissions
 RoleTypeUser
 StaffSalary
-Trainer
-Training
-TrainingType
 User
 UserActivityLog
 UserType
 
+Trainer
+Training
+TrainingType
 <!-- User and ProfileInformation:
 
 One-to-One relationship.

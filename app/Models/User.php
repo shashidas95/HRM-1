@@ -4,8 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Employee;
+use App\Models\RoleType;
 use App\Models\ActivityLog;
+use App\Models\StaffSalary;
 use App\Models\RoleTypeUser;
+use App\Models\LeaveApplication;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\ProfileInformation;
 use Illuminate\Notifications\Notifiable;
@@ -74,5 +77,18 @@ class User extends Authenticatable
     public function roleTypeUsers()
     {
         return $this->hasMany(RoleTypeUser::class);
+    }
+    public function roleType()
+    {
+        return $this->belongsTo(RoleType::class);
+    }
+    public function leaveApplications()
+    {
+        return $this->hasMany(LeaveApplication::class);
+    }
+
+    public function staffSalaries()
+    {
+        return $this->hasMany(StaffSalary::class);
     }
 }
