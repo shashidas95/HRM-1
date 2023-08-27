@@ -14,8 +14,9 @@ return new class extends Migration
     {
         Schema::create('role_type_users', function (Blueprint $table) {
             $table->id();
-            $table->string('role_type')->nullable();
-            $table->timestamps();
+            $table->string('role_type');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
 
         DB::table('role_type_users')->insert([
@@ -25,8 +26,8 @@ return new class extends Migration
             ['role_type' => 'Client'],
             ['role_type' => 'Employee']
         ]);
-
     }
+
 
     /**
      * Reverse the migrations.

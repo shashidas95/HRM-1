@@ -12,22 +12,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('position_types', function (Blueprint $table) {
+        Schema::create('designations', function (Blueprint $table) {
             $table->id();
-            $table->string('position');
+            $table->string('designation');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
 
-        DB::table('position_types')->insert([
-            ['position' => 'CEO'],
-            ['position' => 'CFO'],
-            ['position' => 'Manager'],
-            ['position' => 'Web Designer'],
-            ['position' => 'Web Developer'],
-            ['position' => 'Android Developer'],
-            ['position' => 'IOS Developer'],
-            ['position' => 'Team Leader'],
+        DB::table('designations')->insert([
+            ['designation' => 'CEO'],
+            ['designation' => 'CFO'],
+            ['designation' => 'Manager'],
+            ['designation' => 'Web Designer'],
+            ['designation' => 'Web Developer'],
+            ['designation' => 'Android Developer'],
+            ['designation' => 'IOS Developer'],
+            ['designation' => 'Team Leader'],
         ]);
 
     }

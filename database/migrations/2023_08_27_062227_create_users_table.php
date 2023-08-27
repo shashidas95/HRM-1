@@ -9,7 +9,6 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
@@ -17,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('rec_id')->unique(); // Unique custom ID
             $table->string('email')->unique();
+            $table->foreignId('employee_id')->constrained('employees')->cascadeOnUpdate()->restrictOnDelete();
             $table->string('join_date');
             $table->string('phone_number');
             $table->string('status');
@@ -38,7 +38,6 @@ return new class extends Migration
             $user->save();
         }
     }
-
 
     /**
      * Reverse the migrations.

@@ -14,8 +14,9 @@ return new class extends Migration
     {
         Schema::create('roles_permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('permissions_name')->nullable();
-            $table->timestamps();
+            $table->string('permissions_name');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
 
         DB::table('roles_permissions')->insert(
@@ -32,8 +33,8 @@ return new class extends Migration
                 ['permissions_name' => 'SEO Analyst'],
             ]
         );
-
     }
+
 
     /**
      * Reverse the migrations.

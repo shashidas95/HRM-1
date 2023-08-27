@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('module_permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('employee_id');
+            $table->foreignId('employee_id')->constrained('employees')->cascadeOnUpdate()->restrictOnDelete();
             $table->string('module_permission');
             $table->string('id_count');
             $table->string('read');

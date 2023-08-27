@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('activity_logs', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('description');
-            $table->string('date_time');
+            $table->string('birth_date');
+            $table->string('gender');
+            $table->string('company');
+            $table->foreignId('department_id')->constrained('departments')->cascadeOnUpdate()->restrictOnDelete();
+            $table->foreignId('designation_id')->constrained('designations')->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('activity_logs');
+        Schema::dropIfExists('employees');
     }
 };

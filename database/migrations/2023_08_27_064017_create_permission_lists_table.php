@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leaves_admins', function (Blueprint $table) {
+        Schema::create('permission_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('rec_id');
-            $table->string('leave_type');
-            $table->string('from_date');
-            $table->string('to_date');
-            $table->string('day');
-            $table->string('leave_reason');
+            $table->string('permission_name');
+            $table->string('read');
+            $table->string('write');
+            $table->string('create');
+            $table->string('delete');
+            $table->string('import');
+            $table->string('export');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leaves_admins');
+        Schema::dropIfExists('permission_lists');
     }
 };
