@@ -20,11 +20,11 @@ return new class extends Migration
             $table->integer('vacation_days')->default(0);
             $table->integer('sick_leave_days')->default(0);
             $table->integer('personal_leave_days')->default(0);
-            $table->integer('Maternity/Paternity_leave_days')->default(0);
+            $table->integer('Maternity_Paternity_leave_days')->default(0);
             $table->integer('Bereavement_leave_days')->default(0);
             $table->integer('Public_Holidays_leave_days')->default(0);
             $table->integer('Unpaid_leave_days')->default(0);
-            $table->integer('Family_Medical _leave_days')->default(0);
+            $table->integer('Family_Medical_leave_days')->default(0);
             $table->integer('Study_or_Exam_leave_days')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
