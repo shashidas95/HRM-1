@@ -30,7 +30,7 @@ class User extends Authenticatable
         'status',
         'role_name',
         'avatar',
-        'position',
+        'designaion',
         'department',
         'password',
 
@@ -57,10 +57,7 @@ class User extends Authenticatable
         //'password' => 'hashed',
     ];
 
-    //     Has one: ProfileInformation
-    // Has many: ActivityLog
-    // Has many: Employee (if users can be employees)
-    // Belongs to many: RoleTypeUser
+
 
     public function profileInformation()
     {
